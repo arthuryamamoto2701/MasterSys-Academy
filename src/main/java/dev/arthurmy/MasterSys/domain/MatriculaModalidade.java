@@ -14,7 +14,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "matricula_modalidades")
+@Table(name = "matriculas_modalidades")
 public class MatriculaModalidade {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
