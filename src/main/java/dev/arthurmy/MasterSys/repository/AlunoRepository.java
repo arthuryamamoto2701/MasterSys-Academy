@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import dev.arthurmy.mastersys.domain.Aluno;
 
 public interface AlunoRepository extends JpaRepository<Aluno, Long> {
+    boolean existsByEmail(String email);
     
 }
