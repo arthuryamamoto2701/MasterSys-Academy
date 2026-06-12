@@ -1,4 +1,4 @@
-package dev.service;
+package dev.arthurmy.mastersys.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
