@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.arthurmy.mastersys.dto.AlunoRequest;
 import dev.arthurmy.mastersys.dto.AlunoResponse;
 import dev.arthurmy.mastersys.service.AlunoService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/alunos")
@@ -31,7 +32,7 @@ public class AlunoController {
     
     @PostMapping
     @ResponseStatus(CREATED)
-    public AlunoResponse cadastrar(@RequestBody AlunoRequest alunoRequest) {
+    public AlunoResponse cadastrar(@RequestBody @Valid AlunoRequest alunoRequest) {
         return alunoService.cadastrar(alunoRequest);
     }
 
@@ -47,7 +48,7 @@ public class AlunoController {
 
 
     @PutMapping("/{id}")
-    public AlunoResponse atualizar(@PathVariable Long id, @RequestBody AlunoRequest alunoRequest) {
+    public AlunoResponse atualizar(@PathVariable Long id, @RequestBody @Valid AlunoRequest alunoRequest) {
         return alunoService.atualizar(id, alunoRequest);
     }
 

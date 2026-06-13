@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import dev.arthurmy.mastersys.domain.Aluno;
 import dev.arthurmy.mastersys.dto.AlunoRequest;
 import dev.arthurmy.mastersys.dto.AlunoResponse;
+import dev.arthurmy.mastersys.exception.RegraNegocioException;
 import dev.arthurmy.mastersys.repository.AlunoRepository;
 
 @Service
@@ -20,7 +21,7 @@ public class AlunoService {
 
         public AlunoResponse cadastrar(AlunoRequest request){
             if (request.email() != null && alunoRepository.existsByEmail(request.email())) {
-                throw new RuntimeException("Já existe um aluno cadastrado com esse email.");
+                throw new RegraNegocioException("Já existe um aluno cadastrado com esse email.");
             }
             
 
@@ -66,6 +67,6 @@ public class AlunoService {
 
         private Aluno buscarEntidadePorId(Long id){
             return alunoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Aluno não encontrado com o id: " + id));
+                .orElseThrow(() -> new RegraNegocioException("Aluno não encontrado com o id: " + id));
         }
 }
