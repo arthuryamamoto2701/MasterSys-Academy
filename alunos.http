@@ -78,6 +78,19 @@ Content-Type: application/json
   "cidade": "Ribeirão Pires",
   "estado": "SP",
   "cep": "8843910"
+}
 
 
+### Cadastrar aluno inválido
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+"nome": "",
+  "dataNascimento": "2001-09-26",
+  "sexo":"Masculino",
+  "email": "email-inválido",
+  "observacao": "Aluno iniciante",
+  "estado": "São Paulo",
+  "cep": "8843910"
 }
