@@ -27,7 +27,6 @@ public class Aluno {
 
     @Column(name = "sexo", length = 1)
     private String sexo;
-    
     private String telefone;
     private String celular;
     private String email;
